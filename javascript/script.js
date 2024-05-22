@@ -19,12 +19,13 @@ let boxObject = {
 };
 
 const isFull = () => {
-  for (const item of boxObject) {
-    if (item === false) {
-      return true;
+  for (const id in boxObject) {
+    if (boxObject[id] === false) {
+      console.log(boxObject[id]);
+      return false;
     }
   }
-  return false;
+  return true;
 };
 
 const checkIfSomeOneWon = () => {
@@ -64,6 +65,13 @@ const checkIfSomeOneWon = () => {
     });
     oWins += 1;
     oScore.innerText = oWins;
+  } else if (isFull()) {
+    for (const id in boxObject) {
+      boxObject[id] = false;
+    }
+    boxes.forEach((box) => {
+      box.innerText = "";
+    });
   }
 };
 
