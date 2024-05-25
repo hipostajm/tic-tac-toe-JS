@@ -12,8 +12,8 @@ body {
 }
 .conteiner {
   background-color: black;
-  width: 70vh;
-  height: 70vh;
+  width: 65vh;
+  height: 65vh;
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -52,4 +52,10 @@ body {
   justify-content: center;
   font-size: 2.5rem;
   background-color: white;
+}
+.x-name {
+  color: rgb(44, 185, 44);
+}
+.o-name {
+  color: red;
 }

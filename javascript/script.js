@@ -1,6 +1,9 @@
 const boxes = document.querySelectorAll(".box");
 const xScore = document.querySelector(".x-score");
 const oScore = document.querySelector(".o-score");
+const xName = document.querySelector(".x-name");
+const oName = document.querySelector(".o-name");
+
 let numOfOptions = 9;
 
 let xWins = 0;
@@ -83,6 +86,8 @@ const generateResponse = () => {
   for (const id in boxObject) {
     if (boxObject[id] === false) {
       availebleSpaces.push(id);
+      xName.style.color = "rgb(44, 185, 44)";
+      oName.style.color = "red";
     }
   }
 
@@ -103,6 +108,8 @@ boxes.forEach((box) => {
   box.addEventListener("click", (event) => {
     let id = event.target.getAttribute("data-index");
     if (boxObject[id] === false) {
+      xName.style.color = "red";
+      oName.style.color = "rgb(44, 185, 44)";
       event.target.innerText = "X";
       boxObject[id] = "X";
       setTimeout(changeClickeble, 0);
