@@ -28,9 +28,12 @@ body {
 .box:active {
   background-color: rgb(167, 167, 167);
 }
+.box:disabled {
+  color: black;
+}
 .score {
-  width: 40vh;
-  height: 25vh;
+  width: 30vh;
+  height: 30vh;
   background-color: black;
   display: grid;
   padding: 10px;

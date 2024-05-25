@@ -21,7 +21,6 @@ let boxObject = {
 const isFull = () => {
   for (const id in boxObject) {
     if (boxObject[id] === false) {
-      console.log(boxObject[id]);
       return false;
     }
   }
@@ -93,16 +92,24 @@ const generateResponse = () => {
   boxObject[availebleSpaces[pickedBox]] = "O";
 };
 
+const changeClickeble = () => {
+  boxes.forEach((box) => {
+    console.log(box.disabled);
+    box.disabled = box.disabled === false ? true : false;
+  });
+};
+
 boxes.forEach((box) => {
   box.addEventListener("click", (event) => {
     let id = event.target.getAttribute("data-index");
     if (boxObject[id] === false) {
       event.target.innerText = "X";
       boxObject[id] = "X";
-      console.log(boxObject);
-      checkIfSomeOneWon();
-      generateResponse();
-      checkIfSomeOneWon();
+      setTimeout(changeClickeble, 0);
+      setTimeout(checkIfSomeOneWon, 300);
+      setTimeout(generateResponse, 350);
+      setTimeout(checkIfSomeOneWon, 400);
+      setTimeout(changeClickeble, 430);
     }
   });
 });
